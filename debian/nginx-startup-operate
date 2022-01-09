@@ -1,0 +1,4 @@
+#https://www.jianshu.com/p/fb28ecfed119
+
+chmod +x /etc/init.d/nginx
+update-rc.d -f nginx defaults

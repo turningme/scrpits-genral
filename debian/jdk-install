@@ -1,0 +1,37 @@
+
+install jdk on debian 10
+
+sudo apt-get update
+sudo apt-get install default-jdk
+
+### default version is version 11
+java -version
+javac -version
+
+
+##install Open JDK 8
+
+sudo apt-get update
+sudo apt install apt-transport-https ca-certificates wget dirmngr gnupg software-properties-common
+
+wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+
+## update the repos list , and install 
+sudo apt update
+sudo apt install adoptopenjdk-8-hotspot
+
+
+java -version
+
+##if installed other jdk versions , use command list all versions , and select one
+sudo update-alternatives --config java
+
+
+### uninstall jdk
+sudo apt remove default-jdk
+
+sudo apt remove adoptopenjdk-8-hotspot
+
+
+
