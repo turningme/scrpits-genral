@@ -1,0 +1,29 @@
+#write service in directory in /etc/init.d 
+
+## use command update-rc.d to deploy service to all running levels .
+sudo update-rc.d -f new_service.sh remove
+sudo update-rc.d -f new_service.sh defaults
+
+systemctl daemon-reload
+
+
+
+sudo service xxx status
+sudo service xxx start
+sudo service xxx stop
+sudo service xxx restart
+
+update-rc.d [-n] [-f] <basename> remove
+update-rc.d [-n] <basename> defaults
+update-rc.d [-n] <basename> disable|enable [S|2|3|4|5]
+update-rc.d <basename> start|stop <NN> <runlevels>
+
+### BEGIN INIT INFO
+# Provides:          nginx
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: starts the nginx web server
+# Description:       starts nginx using start-stop-daemon
+### END INIT INFO

@@ -2,3 +2,23 @@
 
 chmod +x /etc/init.d/nginx
 update-rc.d -f nginx defaults
+
+### if LANG , LC_ALL warnings 
+export LC_ALL=C
+
+### the following comments is a must to use update-rc.d to install in the levels
+# or you must use a ln command to mannually install it 
+#
+### BEGIN INIT INFO
+# Provides:          nginx
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: starts the nginx web server
+# Description:       starts nginx using start-stop-daemon
+### END INIT INFO
+#
+
+### for update the script in /etc/init.d/
+systemctl daemon-reload

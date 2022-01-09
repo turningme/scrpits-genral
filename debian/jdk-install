@@ -1,6 +1,6 @@
 
-install jdk on debian 10
-
+#install jdk on debian 10
+#https://zhuanlan.zhihu.com/p/86308378
 sudo apt-get update
 sudo apt-get install default-jdk
 

@@ -1,0 +1,17 @@
+##backgroud debian10 minimum installation , ssh service not open and could not login as root
+
+vim /etc/ssh/ssh_config
+
+## PasswordAuthentication no  remote the comments ,  replace no with yes 
+## find #PermitRootLogin probihit-password , replace prohibit-password with yes
+## restart ssh , /etc/init.d/ssh restart or service ssh restart
+## verify with  /etc/init.d/ssh status
+## update-rc.d ssh enable 
+
+
+## or  execute this follows
+cat >> /etc/ssh/sshd_config <<EOF
+PasswordAuthentication yes
+PermitRootLogin yes
+EOF
+service ssh restart
